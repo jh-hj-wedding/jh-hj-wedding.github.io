@@ -58,24 +58,13 @@
         wow.init();
 		
         $(document).ready(function() {
-            //let date = new Date(2021, 10, 03);
-            //let currentDate = new Date();
-
-            //let result = date - currentDate;
-            //let misec = 24 * 60 * 60 * 1000;
-	
-			//result = (result <= 0)? 0 : (parseInt(result / misec) + 1);
-
-			//아래서부터 새로작성
 			//디데이 종료일자 설정
 			var countDownDate = new Date("May 28, 2022 00:00:00").getTime();
 			//현재 날짜 생성 
 			var now = new Date().getTime();
 			//종료일자에서 현재일자를 뺸 시간
 			var dday = countDownDate - now;
-		
 			var result = Math.floor(parseInt(dday/(1000*60*60*24))+1);
-
             $("#d-day").html(result); 
         });
     </script>
@@ -139,10 +128,6 @@
             모든 분들에게
         </p>
         <p class="wow fadeInUp section2-title section2-sub inner cover cover-container d-flex w-100 h-100 p-2 mx-auto flex-column">
-		
-		<!-- 추후에 멘트 수정하기 !-->
-		<!-- 추후에 멘트 수정하기 !-->
-		<!-- 추후에 멘트 수정하기 !-->
             <br/>
 			안녕하세요.<br/>
             <br/>
