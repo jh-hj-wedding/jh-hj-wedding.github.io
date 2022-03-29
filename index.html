@@ -225,11 +225,26 @@
 
                 // 마커를 생성합니다
                 var marker = new kakao.maps.Marker({
-                    position: markerPosition
+                    position: markerPosition,
+                    clickable: true
                 });
 
                 // 마커가 지도 위에 표시되도록 설정합니다
                 marker.setMap(map);
+
+                // 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다
+                var iwContent = '<div id="content" style="padding:5px;">SW컨벤션센터 11층 노블레스홀</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+
+                // 인포윈도우를 생성합니다
+                var infowindow = new kakao.maps.InfoWindow({
+                    content : iwContent,
+                    removable : true
+                });
+
+                // 마커에 마우스오버 이벤트를 등록합니다
+                kakao.maps.event.addListener(marker, 'click', function() {
+                    infowindow.open(map, marker);
+                });
             </script>
 			
             <div class="wow fadeInUp section6-location p-3">
@@ -379,7 +394,7 @@
 						<div class="modal-body section7-modal section7-modal-content">
                             <b>혼주 계좌</b></p>
 							국민은행 (예금주 : 최광배)</p>
-							xxxx-xxx-xxxxxx</p>
+                            501602-01-259995</p>
 							</p>
 							<b>신랑 계좌</b></p>
 							농협은행 (예금주 : 최종현)</p>
@@ -407,12 +422,12 @@
                         </div>
 						<div class="modal-body section7-modal section7-modal-content">
                             <b>혼주 계좌</b></p>
-							XX은행 (예금주 : 임종국)</p>
-							xxxx-xxx-xxxxx</p>
+							국민은행 (예금주 : 임종국)</p>
+							024801-04-184712</p>
 							</p>
 							<b>신부 계좌</b></p>
-							XX은행 (예금주 : 임현주)</p>
-							xxx-xxxxxx-xxxxxx</p>
+							국민은행 (예금주 : 임현주)</p>
+							429502-01-215185</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
